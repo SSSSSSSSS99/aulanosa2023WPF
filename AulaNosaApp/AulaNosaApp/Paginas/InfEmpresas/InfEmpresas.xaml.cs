@@ -24,5 +24,15 @@ namespace AulaNosaApp.Paginas.InfEmpresas
         {
             InitializeComponent();
         }
+
+        private void btnRefrescar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        void refrescarEmpresasDisponibles()
+        {
+
+        } 
     }
 }

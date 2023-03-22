@@ -150,6 +150,7 @@
     <Compile Include="DTO\AlumnoExternoDTO.cs" />
     <Compile Include="DTO\AlumnoEmpresaDTO.cs" />
     <Compile Include="DTO\EmpresaAlumnosDTO.cs" />
+    <Compile Include="DTO\EmpresasDTO.cs" />
     <Compile Include="Paginas\AdministracionUsuarios\AdministracionUsuarios.xaml.cs">
       <DependentUpon>AdministracionUsuarios.xaml</DependentUpon>
     </Compile>
@@ -178,6 +179,9 @@
     <Compile Include="Paginas\GestionNotas\GestionNotas.xaml.cs">
       <DependentUpon>GestionNotas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\InfEmpresas\InfEmpresas.xaml.cs">
+      <DependentUpon>InfEmpresas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\InfExposiciones\InfExposiciones.xaml.cs">
       <DependentUpon>InfExposiciones.xaml</DependentUpon>
     </Compile>
@@ -193,9 +197,6 @@
     <Compile Include="Paginas\InfEmpresaAlumno\InfEmpresaAlumno.xaml.cs">
       <DependentUpon>InfEmpresaAlumno.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Paginas\InfEmpresas\InfEmpresas.xaml.cs">
-      <DependentUpon>InfEmpresas.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Paginas\InfoPFC\InfoPFC.xaml.cs">
       <DependentUpon>InfoPFC.xaml</DependentUpon>
     </Compile>
@@ -205,6 +206,7 @@
     <Compile Include="Servicios\AlumnoEmpresaApi.cs" />
     <Compile Include="Servicios\AlumnoExternoApi.cs" />
     <Compile Include="Servicios\EmpresaAlumnosApi.cs" />
+    <Compile Include="Servicios\EmpresaApi.cs" />
     <Compile Include="Servicios\InfoPFCApi.cs" />
     <Compile Include="Servicios\UsuariosApi.cs" />
     <Compile Include="Util\Constantes.cs" />
@@ -276,6 +278,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Paginas\InfEmpresas\InfEmpresas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Paginas\InfExposiciones\InfExposiciones.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -293,10 +299,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Paginas\InfEmpresaAlumno\InfEmpresaAlumno.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Paginas\InfEmpresas\InfEmpresas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
