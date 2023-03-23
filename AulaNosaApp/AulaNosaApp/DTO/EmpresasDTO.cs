@@ -12,6 +12,7 @@ namespace AulaNosaApp.DTO
         public int id { get; set; }
         public int idCurso { get; set; }
         public int idEstudios { get; set; }
+        public string nombre { get; set; }
         public string direccionSocial { get; set; }
         public string direccionTrabajo { get; set; }
         public string cif { get; set; }

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AulaNosaApp.Paginas.InfEmpresas"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="925"
+      d:DesignHeight="450" d:DesignWidth="800"
       Title="InfEmpresas">
 
     <Grid Background="White">
@@ -18,25 +18,15 @@
         <TextBlock Name="tbkTitulo" Text="Resumen - Empresas disponibles" Style="{StaticResource TextBlockTituloAdministracion}"/>
         <ToolBar Grid.Row="1">
             <Button Name="btnRefrescar" Content="Refrescar" Style="{StaticResource BotonesAdministracion}" Click="btnRefrescar_Click"/>
-            <Button Name="btnGenerarPDF" Content="PDF" Style="{StaticResource BotonesAdministracion}"/>
+            <Button Name="btnGenerarPDF" Content="PDF" Style="{StaticResource BotonesAdministracion}" Click="btnGenerarPDF_Click"/>
         </ToolBar>
         <DataGrid Grid.Row="2" Name="dgvEmpresaDisponible" ItemsSource="{Binding}" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True"
                   CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserResizeColumns="False" Style="{StaticResource DataGridAdministracion}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Curso" Binding="{Binding idCurso}"/>
-                <DataGridTextColumn Header="Estudios" Binding="{Binding idEstudios}"/>
-                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
-                <DataGridTextColumn Header="Direccion social" Binding="{Binding direccionSocial}"/>
-                <DataGridTextColumn Header="Direccion trabajo" Binding="{Binding direccionTrabajo}"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}"/>
                 <DataGridTextColumn Header="Cif" Binding="{Binding cif}"/>
                 <DataGridTextColumn Header="Representante" Binding="{Binding representante}"/>
                 <DataGridTextColumn Header="Contacto" Binding="{Binding contacto}"/>
-                <DataGridTextColumn Header="Tutor 1" Binding="{Binding tutor1}"/>
-                <DataGridTextColumn Header="Tutor 2" Binding="{Binding tutor2}"/>
-                <DataGridTextColumn Header="Tutor 3" Binding="{Binding tutor3}"/>
-                <DataGridTextColumn Header="Convenio" Binding="{Binding convenio}"/>
-                <DataGridTextColumn Header="Plan individual" Binding="{Binding planIndividual}"/>
-                <DataGridTextColumn Header="Hoja de actividades" Binding="{Binding hojaActividades}"/>
             </DataGrid.Columns>
         </DataGrid>
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AulaNosaApp.DTO;
+using AulaNosaApp.Servicios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,19 +22,30 @@ namespace AulaNosaApp.Paginas.InfEmpresas
     /// </summary>
     public partial class InfEmpresas : Page
     {
+        List<EmpresasDTO> listaEmpresas;
+
         public InfEmpresas()
         {
             InitializeComponent();
+            refrescarEmpresasDisponibles();
         }
 
         private void btnRefrescar_Click(object sender, RoutedEventArgs e)
         {
-
+            refrescarEmpresasDisponibles();
         }
 
         void refrescarEmpresasDisponibles()
         {
+            listaEmpresas = EmpresaApi.ListarEmpresas();
+            dgvEmpresaDisponible.ItemsSource = null;
+            dgvEmpresaDisponible.Items.Clear();
+            dgvEmpresaDisponible.ItemsSource = listaEmpresas;
+        }
 
-        } 
+        private void btnGenerarPDF_Click(object sender, RoutedEventArgs e)
+        {
+            EmpresaApi.exportarPDF(listaEmpresas);
+        }
     }
 }

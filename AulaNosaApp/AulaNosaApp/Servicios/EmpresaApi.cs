@@ -3,6 +3,7 @@ using AulaNosaApp.Util;
 using iText.IO.Font.Constants;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
+using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Draw;
 using iText.Layout;
@@ -62,39 +63,20 @@ namespace AulaNosaApp.Servicios
                 iText.Layout.Element.Paragraph subheader = new iText.Layout.Element.Paragraph("").SetFontSize(10);
                 document.Add(subheader);
 
-                iText.Layout.Element.Table table = new iText.Layout.Element.Table(2);
+                iText.Layout.Element.Table table = new iText.Layout.Element.Table(4);
 
                 table.AddCell(new iText.Layout.Element.Paragraph("EMPRESA").SetFont(bold).SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                table.AddCell(new iText.Layout.Element.Paragraph("DIRECCION SOCIAL").SetFont(bold).SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                table.AddCell(new iText.Layout.Element.Paragraph("DIRECCION TRABAJO").SetFont(bold).SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
                 table.AddCell(new iText.Layout.Element.Paragraph("CIF").SetFont(bold).SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
                 table.AddCell(new iText.Layout.Element.Paragraph("REPRESENTANTE").SetFont(bold).SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
                 table.AddCell(new iText.Layout.Element.Paragraph("CONTACTO").SetFont(bold).SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                table.AddCell(new iText.Layout.Element.Paragraph("1º TUTOR").SetFont(bold).SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                table.AddCell(new iText.Layout.Element.Paragraph("2º TUTOR").SetFont(bold).SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                table.AddCell(new iText.Layout.Element.Paragraph("3º TUTOR").SetFont(bold).SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                table.AddCell(new iText.Layout.Element.Paragraph("CONVENIO").SetFont(bold).SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                table.AddCell(new iText.Layout.Element.Paragraph("PLAN INDIVIDUAL").SetFont(bold).SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                table.AddCell(new iText.Layout.Element.Paragraph("HOJA DE ACTIVIDADES").SetFont(bold).SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
  
 
                 foreach (EmpresasDTO empresa in empresaLista)
                 {
-                    table.AddCell(new iText.Layout.Element.Paragraph(empresa.contacto).SetFont(font).SetBackgroundColor(ColorConstants.WHITE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                    table.AddCell(new iText.Layout.Element.Paragraph(empresa.direccionSocial).SetFont(font).SetBackgroundColor(ColorConstants.WHITE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                    table.AddCell(new iText.Layout.Element.Paragraph(empresa.direccionTrabajo).SetFont(font).SetBackgroundColor(ColorConstants.WHITE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
+                    table.AddCell(new iText.Layout.Element.Paragraph(empresa.nombre).SetFont(font).SetBackgroundColor(ColorConstants.WHITE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
                     table.AddCell(new iText.Layout.Element.Paragraph(empresa.cif).SetFont(font).SetBackgroundColor(ColorConstants.WHITE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
                     table.AddCell(new iText.Layout.Element.Paragraph(empresa.representante).SetFont(font).SetBackgroundColor(ColorConstants.WHITE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
                     table.AddCell(new iText.Layout.Element.Paragraph(empresa.contacto).SetFont(font).SetBackgroundColor(ColorConstants.WHITE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                    table.AddCell(new iText.Layout.Element.Paragraph(empresa.tutor1).SetFont(font).SetBackgroundColor(ColorConstants.WHITE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                    table.AddCell(new iText.Layout.Element.Paragraph(empresa.tutor2).SetFont(font).SetBackgroundColor(ColorConstants.WHITE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                    table.AddCell(new iText.Layout.Element.Paragraph(empresa.tutor3).SetFont(font).SetBackgroundColor(ColorConstants.WHITE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                    String conven = empresa.convenio.ToString();
-                    table.AddCell(new iText.Layout.Element.Paragraph(conven).SetFont(font).SetBackgroundColor(ColorConstants.WHITE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                    String planInd = empresa.planIndividual.ToString();
-                    table.AddCell(new iText.Layout.Element.Paragraph(planInd).SetFont(font).SetBackgroundColor(ColorConstants.WHITE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                    String hojaAct = empresa.planIndividual.ToString();
-                    table.AddCell(new iText.Layout.Element.Paragraph(hojaAct).SetFont(font).SetBackgroundColor(ColorConstants.WHITE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
                 }
 
                 document.Add(table);

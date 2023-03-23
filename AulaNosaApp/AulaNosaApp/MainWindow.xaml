@@ -128,7 +128,7 @@
             <StackPanel x:Name="spnFCT" Style="{StaticResource MargenAbajoStackPanel}">
                 <Label x:Name="lblFCT" Content="GESTIÓN FCT" Style="{StaticResource LabelTitulosMenuIzqda}"/>
                 <StackPanel Style="{StaticResource BotonesCentrados}">
-                    <Button x:Name="btnEmpresas" Content="Empresas" Style="{StaticResource BotonesMenuIzqda}"/>
+                    <Button x:Name="btnEmpresas" Content="Empresas" Style="{StaticResource BotonesMenuIzqda}" Click="btnEmpresas_Click"/>
                     <Button x:Name="btnAlumnado" Content="Alumnado"  Style="{StaticResource BotonesMenuIzqda}"/>
                     <Button x:Name="btnCalendarioFct" Content="Calendario"  Style="{StaticResource BotonesMenuIzqda}" Click="btnCalendarioFct_Click"/>
                     <Button x:Name="btnAlumnoEmpresa" Content="Alumno - Empresa"  Style="{StaticResource BotonesMenuIzqda}" Click="btnAlumnoEmpresa_Click"/>

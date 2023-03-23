@@ -190,5 +190,10 @@ namespace AulaNosaApp
                 }
             }
         }
+
+        private void btnEmpresas_Click(object sender, RoutedEventArgs e)
+        {
+            frmPrincipal.Navigate(new Uri("/Paginas/InfEmpresas/InfEmpresas.xaml", UriKind.Relative));
+        }
     }
 }
